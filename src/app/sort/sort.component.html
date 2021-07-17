@@ -1,0 +1,10 @@
+<button class="btn btn-primary btn-sm mr-1" mat-button [matMenuTriggerFor]="sorting" #sortingMenuTrigger="matMenuTrigger">
+    <mat-icon>swap_vert</mat-icon>
+  </button>
+  <mat-menu #sorting="matMenu" [xPosition]="'before'">
+    <button mat-menu-item (click)="sortSelection(sort)" *ngFor="let sort of sortings"  [ngClass]="{'selected':sort.isSelected}">
+      <mat-icon>{{ sort.icon }}</mat-icon>
+      <span>{{ sort.label }}</span>
+    </button>
+  </mat-menu>
+  

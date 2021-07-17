@@ -1,0 +1,57 @@
+.page {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+	background-color: #e6f7f7;
+}
+
+.shop-hover {
+	position: relative;
+	// width: 600px;
+	// height: 300px;
+	// overflow: hidden;
+	// background-color: #fff;
+	// background-size: 100%;
+	// background-position: center;
+	// box-shadow: 0px 0px 10px 2px rgba(#c5c5c5, 0.5);
+	// box-sizing: border-box;
+	// padding: 30px;
+
+	transition: all 0.3s;
+
+	&:hover {
+		transform: translateY(-20px);
+		background-position: center 100%;
+		background-size: 105%;
+		box-shadow: 0px 0px 20px 0px rgba(#777777, 0.6);
+
+		.shop-hover__button {
+			transform: translateY(0%);
+			color: #027090;
+
+			transition: all 0.3s;
+		}
+	}
+}
+
+.shop-hover__button {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	display: block;
+	width: 100%;
+	background-color: #fff;
+	box-sizing: border-box;
+	padding: 20px 10px;
+	font-size: 12px;
+	color: #fff;
+	font-weight: 300;
+	text-align: center;
+	text-transform: uppercase;
+
+	transform: translateY(100%);
+
+	transition: all 0.3s;
+}

@@ -1,0 +1,39 @@
+[
+    {
+    "p_image":"https://g.foolcdn.com/editorial/images/225916/getty-apple.jpg",
+    "p_name":"Apple",
+    "p_id":1,
+    "p_cost":30,
+    "p_availability":1,
+    "p_details":"Imported from Swiss",
+    "p_category":"Premium"
+    },
+    {
+    "p_image":"https://th.bing.com/th/id/OIP.zFwmdQH0uoiaSXUnUUCBRQHaE8?pid=ImgDet&rs=1",
+    "p_name":"Mango",
+    "p_id":2,
+    "p_cost":50,
+    "p_availability":1,
+    "p_details":"Farmed at Selam",
+    "p_category":"Tamilnadu"
+    },
+    {
+    "p_image":"https://th.bing.com/th/id/OIP.kuVKgNkBaPuVHUDlcLtpMQHaFj?pid=ImgDet&rs=1",
+    "p_name":"Bananna",
+    "p_id":3,
+    "p_cost":5,
+    "p_details":"Farmed at Selam",
+    "p_availability":0,
+    "p_category":"Premium"
+    },
+    {
+    "p_image":"https://th.bing.com/th/id/OIP.tiZBiXeVdPAQx0RfEvVpqwHaE6?pid=ImgDet&rs=1",
+    "p_name":"Orange",
+    "p_id":4,
+    "p_cost":25,
+    "p_availability":1,
+    "p_details":"from Nagpur",
+    "p_category":"Premium"
+    }
+   ]
+   
