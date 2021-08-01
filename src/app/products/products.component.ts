@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-products',
@@ -9,53 +10,31 @@ import { Observable } from 'rxjs';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  products:any;
-  @ViewChild('submitMsg', { static: true })
-  errorPopupRef!: TemplateRef<any>;
-  sort: any;
-  constructor(private httpService: HttpClient, private _dialog: MatDialog,) { }
-  ngOnInit(): void {
-    this.httpService.get('./assets/products.json').subscribe(
-      data => {
-       this.products = data as Observable<any>
-      },
-      (err: HttpErrorResponse) => {
-        console.log (err.message);
-      }
-    );
-  }
-
-  
-
-  onsubmit(id:any) {
-   //@ts-ignore
-    this.errorPopupRef = this._dialog.open(this.errorPopupRef, {
-      width: '800px',
-      hasBackdrop: false,
-      maxHeight: '95vh'
-    })
+  constructor(private productService: ProductService) { }
+ products:any;
+  ngOnInit() {
     //@ts-ignore
-    const val = this.products.find((o) => o.p_id === id) 
-    this.products = [val]
+    this.productService.getProducts()._subscribe(({body}) =>{
+      this.products = body
+      console.log(this.products);
+      
+    })
+    
   }
-
 
   applySort(event:any) {
+    this.products = undefined
     //@ts-ignore
-    if(event!=="show") {
-      //@ts-ignore
-      const val = this.products.find((o) => o.p_id === event) 
-      this.products = [val]
-    }
-   if(event ==="show") {
-      this.products = this.products
-    }
- 
-}
-
-closeAllError() {
-  this._dialog.closeAll();
-}
+    this.productService.getProductsByCategory(event)._subscribe(({body}) =>{
+  this.products = body
+      
+    })
   }
-
-
+  sortByState(event:any) {
+    this.products = undefined
+    //@ts-ignore
+    this.productService.getProductsByState(event)._subscribe(({body}) =>{
+  this.products = body
+  })
+  }
+}

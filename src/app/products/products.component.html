@@ -1,58 +1,31 @@
 <section>
-    <app-sort (applySort)="applySort($event)"></app-sort>
-    <div class="spacer">
-      <div class="container">
-        <div class="row mt-5">
-          <div class="col-lg-12">
-            <div class="row shop-listing">
-              <div class="col-sm-3" *ngFor="let product of products">
-                <div class="card border-0 shop-hover">
-                  <img [src]="product.p_image" alt="wrapkit" class="img-fluid" />
-                  <div class="card-img-overlay align-items-center">
-                    <button class="btn btn-md btn-info" (click)="onsubmit(product.p_id)">Add to Cart</button>
-                  </div>
+  <app-sort (applySort)="applySort($event)"></app-sort>
+  <app-sortbystate (applySort)="sortByState($event)"></app-sortbystate>
+  <div class="spacer">
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-sm-12">
+          <div class="row shop-listing">
+            <div class="col-lg-4 col-md-3 col-sm-1" *ngFor="let product of products">
+              <div class="card border-0 shop-hover">
+                <img src="https://thumbs.dreamstime.com/b/lager-beer-banner-template-brewery-industry-alcohol-design-39453397.jpg" alt="wrapkit" class="img-fluid" />
+                <div class="card-img-overlay align-items-center">
+                  <!-- <button class="btn btn-md btn-info" (click)="onsubmit(product.p_id)">Add to Cart</button> -->
                 </div>
-                <div class="card border-0 ">
-                  <h6>
-                    <a href="#" class="link">{{ product.P_name }}</a>
-                  </h6>
-                  <h6 class="subtitle">{{product.p_category}}</h6>
-                  <h5 class="font-medium m-b-30">
-                    ${{product.p_cost}}
-                  </h5>
-                </div>
+              </div>
+              <div class="card border-0 ">
+                <h6>
+                  <a href="#" class="link">{{ product.brewery_type}}</a>
+                </h6>
+                <h6 class="subtitle">{{product.state}},{{product.city}}</h6>
+                <h5 class="font-medium m-b-30">
+                  ${{product.name}}
+                </h5>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
-  <ng-template #submitMsg>
-    <div class="card">
-      <div class="card-header text-center">
-        Your Products
-      </div>
-      <div class="card-body">
-        <div class="col-12">
-            <div class="col-sm-3" *ngFor="let product of products">
-                <div class="card border-0 shop-hover">
-                  <img [src]="product.p_image" alt="wrapkit" class="img-fluid" />
-                </div>
-                <div class="card border-0 ">
-                  <h6>
-                    <a href="#" class="link">{{ product.P_name }}</a>
-                  </h6>
-                  <h6 class="subtitle">{{product.p_category}}</h6>
-                  <h5 class="font-medium m-b-30">
-                    ${{product.p_cost}}
-                  </h5>
-                </div>
-              </div>
-        </div>
-      </div>
-      <div class="text-center">
-        <button class="btn btn-primary capsule-btn mb-2" (click)="closeAllError()">Ok</button>
-      </div>
-    </div>
-  </ng-template>
+  </div>
+</section>

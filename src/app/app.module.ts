@@ -12,6 +12,7 @@ import {  MatIconModule, } from '@angular/material/icon';
 import {  MatMenuModule } from '@angular/material/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
+import { SortbystateComponent } from './sortbystate/sortbystate.component';
 const routes: Routes = [
   { path: '', component: ProductsComponent }
 ];
@@ -22,7 +23,8 @@ const routes: Routes = [
     AppComponent,
     NavbarComponent,
     ProductsComponent,
-    SortComponent
+    SortComponent,
+    SortbystateComponent
   ],
   imports: [
     BrowserModule,
